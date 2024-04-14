@@ -57,7 +57,6 @@ def main():
 
     while  True:
         upload_images(bucket_name, image_paths)
-        time.sleep(2000)
 
 if __name__ == '__main__':
     main()
