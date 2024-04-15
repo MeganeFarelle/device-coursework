@@ -55,8 +55,7 @@ def main():
     image_paths = get_image_paths(args.directory)
     bucket_name = 'store-device-images-s2110849'
 
-    while  True:
-        upload_images(bucket_name, image_paths)
+    upload_images(bucket_name, image_paths)
 
 if __name__ == '__main__':
     main()
