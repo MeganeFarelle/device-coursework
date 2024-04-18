@@ -24,7 +24,9 @@ def upload_images(bucket_name, image_paths):
             print(f"Uploaded {new_file_name} to {bucket_name}.")
             time.sleep(30)  # Delay between uploads
     except Exception as e:
-        print(f"Error uploading image: {str(e)}")
+        print(f"Error uploading image {file_name} to {bucket_name}: {str(e)}")
+    else:
+        print(f"Image {file_name} uploaded successfully to {bucket_name}.")
 
 def get_image_paths(directory):
     """
