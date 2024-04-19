@@ -22,7 +22,7 @@ def upload_images(bucket_name, image_paths):
             new_file_name = f"{unique_name}_{file_name}"  # Append the unique name to the file name
             s3_client.upload_file(image_path, bucket_name, new_file_name)
             print(f"Uploaded {new_file_name} to {bucket_name}.")
-            time.sleep(30)  # Delay between uploads
+            time.sleep(2)  # Reduce the delay between uploads for testing
     except Exception as e:
         print(f"Error uploading image: {str(e)}")
 
