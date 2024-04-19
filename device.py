@@ -18,12 +18,12 @@ def upload_images(bucket_name, image_paths):
     try:
         for image_path in image_paths:
             file_name = os.path.basename(image_path)
-            # Append a unique identifier to the file name to avoid conflicts
-            unique_name = str(uuid.uuid4())
-            new_file_name = f"{unique_name}_{file_name}"
+            unique_name = str(uuid.uuid4())  # Generate a random unique name
+            new_file_name = f"{unique_name}_{file_name}"  # Append the unique name to the file name
             s3_client.upload_file(image_path, bucket_name, new_file_name)
-            print(f"{file_name} successfully uploaded to {bucket_name}.")
-            time.sleep(1)  # Reduce delay between uploads to 1 second
+            print(f"{file_name} successfully uploaded to {bucket_name}.")  # Print success message
+            print("Images uploaded successfully to S3.")  # Print success message for all uploads
+            time.sleep(30)  # Delay between uploads
     except Exception as e:
         print(f"Error uploading image {file_name} to {bucket_name}: {str(e)}")
     else:
